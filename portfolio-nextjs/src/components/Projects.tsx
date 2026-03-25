@@ -49,6 +49,15 @@ export default function Projects() {
                 <div className="projects__cards_info">
                   <h4>{project.subtitle}</h4>
                   <h3>{project.title}</h3>
+                  {project.techStack && project.techStack.length > 0 && (
+                    <div className="projects__tech_stack">
+                      {project.techStack.map((tech) => (
+                        <span key={tech} className="projects__tech_badge">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="projects__cards_links">
                   {project.githubUrl && (

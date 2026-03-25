@@ -650,6 +650,23 @@ header {
   gap: 4px;
   min-width: 0;
 }
+.projects__tech_stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+.projects__tech_badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: hsla(var(--p-500-code), 0.1);
+  color: var(--p-700);
+  border: 1px solid hsla(var(--p-500-code), 0.2);
+  white-space: nowrap;
+}
 .projects__cards_links {
   display: flex;
   flex-direction: column;
