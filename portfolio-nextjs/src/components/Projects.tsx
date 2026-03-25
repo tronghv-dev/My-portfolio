@@ -37,7 +37,7 @@ export default function Projects() {
                     project.imageUrl &&
                     /^(https?:\/\/.+|\/[^\s].*)/.test(project.imageUrl)
                       ? project.imageUrl
-                      : "/assets/project1.jpg"
+                      : "/assets/404page.jpg"
                   }
                   alt={project.title}
                   className="projects__cards_img"
@@ -72,7 +72,7 @@ export default function Projects() {
                   )}
                   {project.projectUrl && (
                     <a
-                      href={project.projectUrl}
+                      href={`/api/demo?url=${encodeURIComponent(project.projectUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="projects__link projects__link--demo"

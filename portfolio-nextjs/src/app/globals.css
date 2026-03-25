@@ -702,6 +702,48 @@ footer {
   padding: 40px 0;
 }
 
+/* No-demo page */
+.no-demo__page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--n-50);
+  padding: 24px;
+}
+.no-demo__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: var(--foreground-color);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 8px 32px hsla(var(--p-950-code), 0.1);
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+}
+.no-demo__img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.no-demo__text {
+  font-size: var(--h4-font-size);
+  font-weight: 600;
+  color: var(--p-900);
+}
+.no-demo__back {
+  font-size: var(--caption-font-size);
+  color: var(--p-600);
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 /* ============================
    ANIMATIONS
    ============================ */
