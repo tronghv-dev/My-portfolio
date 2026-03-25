@@ -1,0 +1,20 @@
+# Root
+node_modules/
+*.log
+
+# Server
+server/.env
+server/node_modules/
+
+# Next.js
+portfolio-nextjs/.next/
+portfolio-nextjs/out/
+portfolio-nextjs/build/
+portfolio-nextjs/.env*
+portfolio-nextjs/node_modules/
+portfolio-nextjs/.vercel/
+portfolio-nextjs/*.tsbuildinfo
+portfolio-nextjs/next-env.d.ts
+
+# OS
+.DS_Store
