@@ -1,18 +1,23 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Project } from "@/types/project";
 
-export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
+const API_BASE = process.env.EXPRESS_API_URL || "http://localhost:5000";
 
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((r) => r.json())
-      .then((data: Project[]) => setProjects(data))
-      .catch(() => {});
-  }, []);
+async function getProjects(): Promise<Project[]> {
+  try {
+    const res = await fetch(`${API_BASE}/api/projects`, {
+      next: { revalidate: 60 },
+    });
+
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
+  }
+}
+
+export default async function Projects() {
+  const projects = await getProjects();
 
   return (
     <section className="projects__section" id="ProjectContainer">
@@ -29,6 +34,9 @@ export default function Projects() {
 
         {/* cards */}
         <div className="project__cards_container">
+          {projects.length === 0 && (
+            <p className="projects__empty">Hiện chưa có dự án để hiển thị.</p>
+          )}
           {projects.map((project) => (
             <div key={project._id} className="projects__cards">
               <div className="projects__cards_wrapper">
